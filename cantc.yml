@@ -1,0 +1,28 @@
+```yaml
+name: 1337x
+version: 3
+about: >-
+  Large aggregate site for media. Make your queries descriptive because searches are slow.
+website: https://1337x.to
+tags:
+  - name: Slow
+    color: ff9500
+  - name: Movies
+  - name: TV
+  - name: Anime
+htmlParser:
+  searchUrl: /search/{query}/1/
+  rows: .table-list tbody tr
+  magnet:
+    externalLinkQuery: .name a:nth-last-child(1)
+    query: div.clearfix > ul:nth-child(1) > li:nth-child(1) > a
+    attribute: href
+  title:
+    query: .name > a:nth-last-child(1)
+  size:
+    query: .size
+    regex: (.+?B)
+  sl:
+    seeders: .seeds
+    leechers: .leeches
+```
