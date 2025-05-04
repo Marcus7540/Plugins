@@ -25,3 +25,5 @@ sources:
       sl:
         seeders: .seeds
         leechers: .leeches
+
+actions:
