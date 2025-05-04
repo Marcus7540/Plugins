@@ -1,0 +1,64 @@
+name: kingbri's YAML plugins
+author: kingbri
+sources:
+  - name: DODI Repacks
+    version: 1
+    minVersion: '0.7.2'
+    about: >-
+      DODI Repacks offers highly compressed PC game torrents with fast updates.
+      Official uploads only. Always verify links.
+    website: https://dodi-repacks.site
+    tags:
+      - name: Games
+        color: 5856d6
+      - name: Repack
+        color: af52de
+      - name: Trusted
+        color: 34c759
+    htmlParser:
+      searchUrl: /?s={query}
+      rows: article
+      magnet:
+        externalLinkQuery: .entry-title a
+        query: a[href*="magnet:?"]
+        attribute: href
+      title:
+        query: .entry-title a
+      size:
+        query: .entry-content
+        regex: Size\s*:\s*([\d.]+\s*[MG]B)
+      sl:
+        # Not publicly listed, use dummy value
+        seeders: ''
+        leechers: ''
+
+  - name: FitGirl Repacks
+    version: 1
+    minVersion: '0.7.2'
+    about: >-
+      FitGirl Repacks specializes in highly compressed games. Verified uploads only.
+      Avoid mirrors not listed on her official site.
+    website: https://fitgirl-repacks.site
+    tags:
+      - name: Games
+        color: 5856d6
+      - name: Repack
+        color: af52de
+      - name: Trusted
+        color: 34c759
+    htmlParser:
+      searchUrl: /?s={query}
+      rows: article
+      magnet:
+        externalLinkQuery: .entry-title a
+        query: a[href*="magnet:?"]
+        attribute: href
+      title:
+        query: .entry-title a
+      size:
+        query: .entry-content
+        regex: Repack\s*Size\s*:\s*([\d.]+\s*[MG]B)
+      sl:
+        # Not available publicly
+        seeders: ''
+        leechers: ''
